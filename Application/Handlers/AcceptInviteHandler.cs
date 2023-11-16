@@ -61,7 +61,7 @@ namespace Application.Handlers
         private async Task CheckIfTheBbqShouldBeConfirmed(string churrasId)
         {
             var churras = await _bbqRepository.GetAsync(churrasId);
-            if (churras.ConfirmedPeopleId.Count == 2 && churras.Status != BbqStatus.Confirmed)
+            if (churras.ConfirmedPeopleId.Count == 7 && churras.Status != BbqStatus.Confirmed)
             {                
                 churras.Apply(new BbqWasConfirmed(BbqStatus.Confirmed));
                 await _bbqRepository.SaveAsync(churras);
