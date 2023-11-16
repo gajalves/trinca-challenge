@@ -79,8 +79,7 @@ namespace Application.Handlers
 
         private List<string> RemoveModeratorIdFromPeopleIdList(Lookups lookups)
         {
-            return lookups.PeopleIds.Except(lookups.ModeratorIds).ToList();
-            //return lookups.PeopleIds.Where(id => !lookups.ModeratorIds.Contains(id)).ToList();
+            return lookups.PeopleIds.Except(lookups.ModeratorIds).ToList();            
         }
     }
 }
